@@ -3,12 +3,12 @@ defmodule Mix.Tasks.Day01 do
 
   use Mix.Task
   @impl Mix.Task
-  def run(_) do
+  def run([subtask]) do
     "priv/input/day01.txt"
     |> File.read!()
     |> String.split("\n", trim: true)
     |> Enum.map(&String.to_integer/1)
-    |> Day01.run(2020)
+    |> Day01.solve(String.to_existing_atom(subtask), 2020)
     |> IO.puts()
   end
 end
