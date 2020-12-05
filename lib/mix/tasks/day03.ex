@@ -3,10 +3,15 @@ defmodule Mix.Tasks.Day03 do
 
   use Mix.Task
   @impl Mix.Task
-  def run([subtask]) do
+  def run(["first"]) do
     "priv/input/day03.txt"
     |> File.stream!()
-    |> Solver.solve(String.to_existing_atom(subtask))
+    |> Solver.solve(3,1)
     |> IO.puts()
+  end
+
+  def run(["second"]) do
+    stream = File.stream!("priv/input/day03.txt")
+    Solver.solve(stream, 1, 1) * Solver.solve(stream, 3, 1) * Solver.solve(stream, 5, 1) * Solver.solve(stream, 7, 1) * Solver.solve(stream, 1, 2) |> IO.puts()
   end
 end
