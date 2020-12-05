@@ -14,6 +14,10 @@ defmodule AOC2020.Day04.Parser do
     passport
     |> String.split(" ")
     |> Enum.map(&String.split(&1, ":"))
-    |> Enum.map(fn [key, value] -> {String.to_atom(key), value} end)
+    |> Enum.reject(&Kernel.==(Enum.at(&1, 0), "cid"))
+    |> Enum.map(&parse_field/1)
   end
+
+  defp parse_field([key, value]) when key in ["byr", "iyr", "eyr"], do: {String.to_atom(key), String.to_integer(value)}
+  defp parse_field([key, value]), do: {String.to_atom(key), value}
 end

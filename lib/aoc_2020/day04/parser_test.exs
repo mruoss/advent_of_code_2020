@@ -35,7 +35,15 @@ defmodule AOC2020.Day04.ParserTest do
 
   describe "parse_passport/1" do
     test "should parse passport correctly" do
-      assert [ iyr: "2011", ecl: "brn", hgt: "59in", hcl: "#cfa07d", eyr: "2025", pid: "166559648" ] == MUT.parse_passport("iyr:2011 ecl:brn hgt:59in hcl:#cfa07d eyr:2025 pid:166559648")
+      assert [
+               byr: 1937,
+               iyr: 2017,
+               hgt: "183cm",
+               ecl: "gry",
+               pid: "860033327",
+               eyr: 2020,
+               hcl: "#fffffd"
+             ] == MUT.parse_passport("byr:1937 iyr:2017 cid:147 hgt:183cm ecl:gry pid:860033327 eyr:2020 hcl:#fffffd")
     end
   end
 end
