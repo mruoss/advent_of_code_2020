@@ -13,8 +13,5 @@ defmodule AOC2020.Day05.SolverTest do
 
       assert 820 == MUT.solve(input, :first)
     end
-
-    test "should solve second task with test input from website correctly" do
-    end
   end
 end

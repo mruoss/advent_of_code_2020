@@ -28,4 +28,26 @@ defmodule AOC2020.Day05.Seat do
   defp to_integer_c(?B, factor), do: factor
   defp to_integer_c(?R, factor), do: factor
   defp to_integer_c(_, _), do: 0
+
+  def inc(nil), do: nil
+  def inc(seat) do
+    0..9
+    |> Enum.reduce_while({[], Enum.reverse(seat), 1}, fn _, {acc, [char | tail], carrier} ->
+      {new_char, new_carrier} = inc_c(char, carrier)
+      new_acc = [new_char | acc]
+      if new_carrier == 0 do
+        {:halt, {Enum.reverse(tail) ++ new_acc}}
+      else
+        {:cont, {new_acc, tail, new_carrier}}
+      end
+    end)
+    |> elem(0)
+  end
+
+  defp inc_c(?R, 1), do: {?L, 1}
+  defp inc_c(?B, 1), do: {?F, 1}
+  defp inc_c(?L, 1), do: {?R, 0}
+  defp inc_c(?F, 1), do: {?B, 0}
 end
+
+
