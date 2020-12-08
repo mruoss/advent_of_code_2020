@@ -13,9 +13,6 @@ defmodule AOC2020.Day04.Solver do
     end)
     |> Enum.count()
   end
-
-  defp has_entry?(passport, field), do: Keyword.get(passport, field) != nil
-
   def solve(lines, :second) do
     lines
     |> Parser.split_passports()
@@ -25,4 +22,6 @@ defmodule AOC2020.Day04.Solver do
     end)
     |> Enum.count()
   end
+
+  defp has_entry?(passport, field), do: Keyword.get(passport, field) != nil
 end
