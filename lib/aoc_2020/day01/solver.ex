@@ -1,4 +1,4 @@
-defmodule AOC2020.Day01 do
+defmodule AOC2020.Day01.Solver do
   def solve(input, :first, target) do
     input
     |> Enum.sort()

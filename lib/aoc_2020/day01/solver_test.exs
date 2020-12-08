@@ -1,7 +1,7 @@
-defmodule AOC2020.Day01Test do
+defmodule AOC2020.Day01.SolverTest do
   use ExUnit.Case
 
-  alias AOC2020.Day01, as: MUT
+  alias AOC2020.Day01.Solver, as: MUT
 
   describe "solve/3" do
     test "should solve first task with test input from website correctly" do
