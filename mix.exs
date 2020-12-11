@@ -22,6 +22,7 @@ defmodule AOC2020.MixProject do
   # Run "mix help deps" to learn about dependencies.
   defp deps do
     [
+      {:matrix, "~> 0.3"},
       {:mix_test_watch, "~> 0.8", only: :dev, runtime: false}
     ]
   end
