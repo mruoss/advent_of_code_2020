@@ -1,6 +1,4 @@
 defmodule AOC2020.Day11.Solver do
-  require Integer
-
   def solve(input, subtask) do
     floorplan = input
     |> String.split("\n", trim: true)
