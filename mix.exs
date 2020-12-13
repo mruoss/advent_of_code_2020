@@ -23,6 +23,7 @@ defmodule AOC2020.MixProject do
   defp deps do
     [
       {:matrix, "~> 0.3"},
+      {:elixir_math, "~> 0.1"},
       {:mix_test_watch, "~> 0.8", only: :dev, runtime: false}
     ]
   end
