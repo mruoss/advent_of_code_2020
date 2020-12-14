@@ -18,6 +18,16 @@ defmodule AOC2020.Day14.SolverTest do
     end
 
     test "should solve second task with first test input from website correctly" do
+      input = """
+      mask = 000000000000000000000000000000X1001X
+      mem[42] = 100
+      mask = 00000000000000000000000000000000X0XX
+      mem[26] = 1
+      """
+      |> String.split("\n", trim: true)
+      |> Enum.map(fn s -> s <> "\n" end)
+
+      assert 208 == MUT.solve(input, :second)
     end
   end
 end
