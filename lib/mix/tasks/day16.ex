@@ -7,6 +7,6 @@ defmodule Mix.Tasks.Day16 do
     "priv/input/day16.txt"
     |> File.stream!()
     |> Solver.solve(String.to_existing_atom(subtask))
-    |> IO.puts()
+    |> IO.inspect()
   end
 end
