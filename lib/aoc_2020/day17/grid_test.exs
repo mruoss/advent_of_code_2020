@@ -80,6 +80,6 @@ defmodule AOC2020.Day17.GridTest do
       ],
     ]
 
-    assert 18 == MUT.sum(grid)
+    assert 18 == MUT.sum(grid, :first)
   end
 end

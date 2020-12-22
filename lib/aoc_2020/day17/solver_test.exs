@@ -13,5 +13,15 @@ defmodule AOC2020.Day17.SolverTest do
 
       assert 112 == MUT.solve(input, :first)
     end
+    test "should solve second task with first test input from website correctly" do
+      input = """
+      .#.
+      ..#
+      ###
+      """
+
+      assert 848 == MUT.solve(input, :second)
+    end
+
   end
 end

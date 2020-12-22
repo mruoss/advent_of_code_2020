@@ -3,10 +3,10 @@ defmodule Mix.Tasks.Day17 do
 
   use Mix.Task
   @impl Mix.Task
-  def run(["first"]) do
+  def run([subtask]) do
     "priv/input/day17.txt"
     |> File.read!()
-    |> Solver.solve(:first)
+    |> Solver.solve(String.to_existing_atom(subtask))
     |> IO.inspect()
-  end 
+  end
 end
